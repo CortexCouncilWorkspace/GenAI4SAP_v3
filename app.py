@@ -1,6 +1,6 @@
 from vanna.chromadb import ChromaDB_VectorStore
 from vanna.google import GoogleGeminiChat
-from vanna.flask import VannaFlaskApp
+from flask_ui import VannaFlaskApp
 from utilities import (PROJECT_ID, MODEL, LANGUAGE, LOGO_URL, APP_TITLE, APP_SUBTITLE, API_KEY)
 
 class MyVanna(ChromaDB_VectorStore, GoogleGeminiChat):
