@@ -132,7 +132,7 @@ def main():
         'roles/artifactregistry.admin',
     ]
     for build_role in build_roles:
-        buildgrant_command = f"""gcloud projects add-iam-policy-binding {project_id}  --member=serviceAccount:$(gcloud projects describe {project_id} --format="value(projectNumber)")@cloudbuild.gserviceaccount.com --role="{build_role}" --quiet"""
+        buildgrant_command = f"""gcloud projects add-iam-policy-binding {project_id}  --member=serviceAccount:$(gcloud projects describe {project_id} --format="value(projectNumber)")@cloudbuild.gserviceaccount.com --role="{build_role}" --quiet --condition=None"""
         if not subprocess.run(buildgrant_command, shell=True):
             sys.exit(1)
     developer_roles = [
@@ -140,7 +140,7 @@ def main():
         'roles/artifactregistry.admin',
     ]
     for developer_role in developer_roles:
-        developergrant_command = f"""gcloud projects add-iam-policy-binding {project_id}  --member=serviceAccount:$(gcloud projects describe {project_id} --format="value(projectNumber)")-compute@developer.gserviceaccount.com --role={developer_role} --quiet"""
+        developergrant_command = f"""gcloud projects add-iam-policy-binding {project_id}  --member=serviceAccount:$(gcloud projects describe {project_id} --format="value(projectNumber)")-compute@developer.gserviceaccount.com --role={developer_role} --quiet --condition=None"""
         if not subprocess.run(developergrant_command, shell=True):
             sys.exit(1)
 
