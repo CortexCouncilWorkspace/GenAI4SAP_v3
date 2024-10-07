@@ -13,6 +13,8 @@ Let's fill the config.ini file to run the setup.
 
 Fill the config.ini file with your data, save and close editor.
 
+For demo purpose, fill only the **project_id** field.
+
 ## **Running the automatic setup**
 
 Run this command in Cloud Shell:
